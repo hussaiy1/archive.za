@@ -26,9 +26,10 @@ for i in range(len(alpha)):
                 productId = base + alpha[i] + alpha[k] + alpha[j] + str(numb[y])
                 productIds.append(productId)
 
-counter = 0
+
 
 def productSearch(prodId):
+    counter = 0
     try:
         client = requests.Session()
         r = client.get('https://www.archivestore.co.za/product/generateProductJSON.jsp?productId={}'.format(prodId))
@@ -49,7 +50,7 @@ def productSearch(prodId):
             f.write('{} \n'.format(prodId))
             f.close()
     counter += 1
-    if counter % 100 = 0:
+    if counter % 100 == 0:
         time.sleep(300)
 
 
