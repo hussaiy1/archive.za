@@ -26,6 +26,8 @@ for i in range(len(alpha)):
                 productId = base + alpha[i] + alpha[k] + alpha[j] + str(numb[y])
                 productIds.append(productId)
 
+counter = 0
+
 def productSearch(prodId):
     try:
         client = requests.Session()
@@ -37,15 +39,18 @@ def productSearch(prodId):
             with open('productList.csv', 'a') as f:
                 f.write('{}|{} \n'.format(prodId, name))
                 f.close()
-            print(prodId)
+            print('{} - {}'.format(prodId, name))
         else:
-            print('----------------------------------------')
+            print('{} - Can;t find this'.format(prodId))
 
     except requests.exceptions.ConnectionError:
         print('Unable to find product at ID: {}'.format(prodId))
         with open('emptyID.txt', 'a') as f:
             f.write('{} \n'.format(prodId))
             f.close()
+    counter += 1
+    if counter % 100 = 0:
+        time.sleep(300)
 
 
 threads = []
