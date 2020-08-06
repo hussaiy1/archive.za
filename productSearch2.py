@@ -43,7 +43,7 @@ def productSearch(prodId):
             print('{} - {}'.format(prodId, name))
             sendHook(name,'https://www.archivestore.co.za' + productData['pdpURL'], 'size', productData['images'][0]['thumb'])
         else:
-            print('{} - Cant find this'.format(prodId))
+            print('{}'.format(prodId))
 
     except requests.exceptions.ConnectionError:
         print('Unable to find product at ID: {}'.format(prodId))
