@@ -42,6 +42,9 @@ def productSearch(prodId):
                 f.close()
             print('{} - {}'.format(prodId, name))
             sendHook(name,'https://www.archivestore.co.za' + productData['pdpURL'], 'size', productData['images'][0]['thumb'])
+        elif len(productData) > 0:
+            name = productData['name']
+            print('{} - {}'.format(prodId, name))
         else:
             print('{}'.format(prodId))
 
