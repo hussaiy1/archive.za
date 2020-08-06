@@ -5,6 +5,7 @@ from datetime import datetime
 import threading 
 import time
 import os
+from discord import *
 
 def removeFile(filename):
     if os.path.exists(filename):
