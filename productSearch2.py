@@ -35,7 +35,7 @@ def productSearch(prodId):
         r = client.get('https://www.archivestore.co.za/product/generateProductJSON.jsp?productId={}'.format(prodId))
         time.sleep(1)
         productData = json.loads(r.text)
-        if len(productData) > 0 and 'Zoom' in productData['name']:
+        if len(productData) > 0 and 'NRG' in productData['name']:
             name = productData['name']
             with open('productList.csv', 'a') as f:
                 f.write('{}|{} \n'.format(prodId, name))
